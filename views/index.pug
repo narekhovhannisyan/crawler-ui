@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 Tranding Posts in Facebook 
+  if pages.length == 0 
+    each p in pages
+      p #{p.page_id}
+  else 
+    p there is no Tranding Posts yet :(

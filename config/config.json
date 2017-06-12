@@ -1,0 +1,18 @@
+{
+	"development": {
+        "host": "hostname",
+        "protocol": "http",
+        "pgConnectionString":"postgres://narekhovh:narekhovh@localhost:5432/crawlerDB",
+        "redis": {
+            "host": "localhost",
+            "port": "5432",
+            "password": "narekhovh"
+            },
+        "FACEBOOK_APP_ID": "246718849127534",
+        "FACEBOOK_APP_SECRET": "0cb37514e85e15d922cb7efd45e64fc7"
+    },
+
+	"production": {
+
+	}
+}
