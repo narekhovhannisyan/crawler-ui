@@ -1,9 +1,39 @@
 extends layout
 
 block content
-  h1 Tranding Posts in Facebook 
-  if pages.length != 0 
-    each p in pages
-      p #{p.page_id}
-  else 
-    p there is no Tranding Posts yet :(
+  div(class='container')
+    h1(class='page-header') Social Crawler &nbsp; 
+      small facebook 
+  hr
+  div(class='container')
+    h4 Please select properties for finding tranding posts!
+    form(action='/' method='GET')
+      div(class='form-group')
+        label Created At &nbsp;
+        input(type='text' name='minutes' placeholder='Minutes')
+        label &nbsp;Last Growth Rate &nbsp; 
+        input(type='text' name='percents' placeholder='Percents')
+        label &nbsp;Crawl Count &nbsp; 
+        input(type='text' name='count' placeholder='Count')
+        br
+        input(type='submit' class='btn btn-default' value='Submit')
+  hr
+  div(class='container')
+    if !pages
+      p Please select properties first!
+    else
+      table(class="table table-striped table-bordered table-hover table-condensed")
+        tr
+          th Post
+          th Created At
+          th Crawl Count
+        if pages.length != 0 
+          each p in pages
+            tr
+              td
+                a(href=p.link) #{p.post_message} 
+              td #{p.createdAt}
+              td #{p.crawl_count}
+        else 
+          tr
+            td there is no Tranding Posts yet :(
