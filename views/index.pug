@@ -4,7 +4,7 @@ block content
   div(class='container')
     h1(class='page-header') Social Crawler &nbsp; 
       small facebook 
-  hr
+    hr
   div(class='container')
     h4 Please select properties for finding tranding posts!
     form(action='/' method='GET')
@@ -17,7 +17,7 @@ block content
         input(type='text' name='count' placeholder='Count')
         br
         input(type='submit' class='btn btn-default' value='Submit')
-  hr
+  
   div(class='container')
     if !pages
       p Please select properties first!
@@ -27,6 +27,7 @@ block content
           th Post
           th Created At
           th Crawl Count
+          th Last Growth Rate
         if pages.length != 0 
           each p in pages
             tr
@@ -34,6 +35,7 @@ block content
                 a(href=p.link) #{p.post_message} 
               td #{p.createdAt}
               td #{p.crawl_count}
+              td #{p.last_growth_rate}
         else 
           tr
             td there is no Tranding Posts yet :(
